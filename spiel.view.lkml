@@ -73,7 +73,7 @@ view: spiel {
     # Declare that "male_percentage" has a type of number
     type: number
     # Declare that "male_percentage" is the "male_population" divided by the "total_population"
-    sql: ${msrp}-${show_price} / ${msrp} ;;
+    sql: (${msrp}-${show_price}) / ${msrp} ;;
 
     # Declare that "male_percentage" is formatted as a percentage with no decimal points
     value_format_name: percent_0
