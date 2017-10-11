@@ -82,5 +82,12 @@ view: spiel {
 
   }
 
+  measure: average_price{
+    type: average
+    sql: ${msrp} ;;     # Declare that the sum is based on the "msrp" dimension
+    drill_fields: [title]
+
+  }
+
 
 }
