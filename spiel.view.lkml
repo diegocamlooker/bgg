@@ -56,6 +56,18 @@ view: spiel {
     sql: ${TABLE}.Type ;;
   }
 
+  dimension: offer { # Create a measure called "offer"
+
+    # Declare that "male_percentage" has a type of number
+    type: number
+    # Declare that "male_percentage" is the "male_population" divided by the "total_population"
+    sql: (${msrp}-${show_price}) / ${msrp} ;;
+
+    # Declare that "male_percentage" is formatted as a percentage with no decimal points
+    value_format_name: percent_0
+  }
+
+
   measure: count {
     type: count
     approximate_threshold: 100000
@@ -66,17 +78,6 @@ view: spiel {
       sql: ${msrp} ;;     # Declare that the sum is based on the "msrp" dimension
       drill_fields: [title]
 
-  }
-
-  measure: offer { # Create a measure called "offer"
-
-    # Declare that "male_percentage" has a type of number
-    type: number
-    # Declare that "male_percentage" is the "male_population" divided by the "total_population"
-    sql: (${msrp}-${show_price}) / ${msrp} ;;
-
-    # Declare that "male_percentage" is formatted as a percentage with no decimal points
-    value_format_name: percent_0
   }
 
 
