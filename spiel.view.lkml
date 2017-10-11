@@ -11,6 +11,11 @@ view: spiel {
     sql: ${TABLE}.Location ;;
   }
 
+  dimension: hall {        # Create a dimension called "hall"
+    type: number
+    sql: SUBSTRING(${location},6,6) ;; # Perform a SQL calculation based on the "hall" dimension
+  }
+
   dimension: msrp {
     type: number
     sql: ${TABLE}.MSRP ;;
