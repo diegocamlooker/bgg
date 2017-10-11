@@ -13,7 +13,7 @@ view: spiel {
 
   dimension: hall {        # Create a dimension called "hall"
     type: string
-    sql: SUBSTRING(${location},6,6) ;; # Perform a SQL calculation based on the "hall" dimension
+    sql: SUBSTRING(${location},6,1) ;; # Perform a SQL calculation based on the "hall" dimension
   }
 
   dimension: msrp {
