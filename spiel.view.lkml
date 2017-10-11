@@ -22,6 +22,7 @@ view: spiel {
   }
 
   dimension: msrp_currency {
+    hidden: yes
     type: string
     sql: ${TABLE}.MSRP_Currency ;;
   }
@@ -42,6 +43,7 @@ view: spiel {
   }
 
   dimension: show_price_currency {
+    hidden: yes
     type: string
     sql: ${TABLE}.Show_Price_Currency ;;
   }
