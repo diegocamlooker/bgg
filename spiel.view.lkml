@@ -27,6 +27,14 @@ view: spiel {
     sql: ${TABLE}.MSRP_Currency ;;
   }
 
+  dimension: MRSP_tier {
+    type:  tier
+    tiers: [10,20,30,40,50,60,70,80,90,100]
+    style: integer
+    sql: ${msrp} ;;
+    drill_fields: [title, msrp,msrp_currency]
+  }
+
   dimension: priority {
     type: number
     sql: ${TABLE}.Priority ;;
@@ -68,6 +76,8 @@ view: spiel {
     # Declare that "male_percentage" is formatted as a percentage with no decimal points
     value_format_name: percent_0
   }
+
+
 
 
   measure: count {
