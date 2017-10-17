@@ -77,14 +77,12 @@ view: spiel {
     value_format_name: percent_0
   }
 
-
-
-
   measure: count {
     type: count
     approximate_threshold: 100000
     drill_fields: [title]
       }
+
     measure: total_price{
       type: sum
       sql: ${msrp} ;;     # Declare that the sum is based on the "msrp" dimension
