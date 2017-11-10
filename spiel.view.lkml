@@ -68,9 +68,9 @@ view: spiel {
 
   dimension: offer { # Create a measure called "offer"
 
-    # Declare that "male_percentage" has a type of number
+    # Declare that "offer" has a type of number
     type: number
-    # Declare that "male_percentage" is the "male_population" divided by the "total_population"
+    # Declare that "offer" is the "msrp-show price" divided by the "msrp"
     sql: (${msrp}-${show_price}) / ${msrp} ;;
 
     # Declare that "male_percentage" is formatted as a percentage with no decimal points
