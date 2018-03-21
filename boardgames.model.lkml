@@ -12,6 +12,16 @@ include: "*.dashboard"
 # Create an explorable item based on the "lesson_1_names" view
 explore: spiel {
 
+  # sql_always_where: ${type} ='Standalone';;
+
+sql_always_where: {% if spiel.hall._value == '3' %}
+                     ${type}='Standalone'
+                    {% else %}
+                     ${type}='Expansion'
+                    {% endif %};;
+
+#   fields: [-ALL_FIELDS*]
+
   # Give the explore a user-friendly name in the Explore menu
   label: "spiel"
 
@@ -19,4 +29,9 @@ explore: spiel {
   group_label: "boardgames"
 
   description: "Looker analysis of the new releases in Spiel this year"
+}
+
+explore: sql_runner_query {
+  label: "Sql runner test"
+  group_label: "boardgames"
 }

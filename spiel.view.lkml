@@ -59,6 +59,7 @@ view: spiel {
   dimension: title {
     type: string
     sql: ${TABLE}.Title ;;
+    drill_fields: [publisher,hall]
   }
 
   dimension: type {
@@ -81,7 +82,9 @@ view: spiel {
     type: count
     approximate_threshold: 100000
     drill_fields: [title]
-      }
+    html:
+    <div style="color: black; background-color: lightblue; font-size:100%; text-align:center">{{ rendered_value }}</div>
+      ;;}
 
     measure: total_price{
       type: sum
