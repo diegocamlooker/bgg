@@ -2,6 +2,7 @@ view: spiel {
   sql_table_name: boardgames.spiel ;;
 
   dimension: availability {
+    label: "{% if spiel.availability._value == 'Demo' %} yes {% else %} no {% endif %}"
     type: string
     sql: ${TABLE}.Availability ;;
   }
