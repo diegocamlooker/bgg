@@ -7,14 +7,14 @@ view: spiel {
     sql: ${TABLE}.Availability ;;
   }
 
-  dimension: location_1 {
+  dimension: location_2 {
     type: string
     sql: ${TABLE}.Location ;;
   }
 
   dimension: hall {        # Create a dimension called "hall"
     type: string
-    sql: SUBSTRING(${location_1},6,1) ;; # Perform a SQL calculation based on the "hall" dimension
+    sql: SUBSTRING(${location_2},6,1) ;; # Perform a SQL calculation based on the "hall" dimension
   }
 
   dimension: msrp {
